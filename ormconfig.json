@@ -1,0 +1,12 @@
+{
+  "type": "mysql",
+  "host": "0.0.0.0",
+  "port": 3306,
+  "database": "formio",
+  "username": "root",
+  "entities": ["src/entity/*.ts", "./dist/src/entity/*.js"],
+  "migrations": ["src/migrations/*.ts", "dist/migrations/*.js"],
+  "logging": false,
+  "synchronize": true,
+  "migrationsTableName": "migration"
+}

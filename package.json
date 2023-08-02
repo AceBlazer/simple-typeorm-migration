@@ -1,0 +1,33 @@
+{
+  "name": "item",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.31"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.13",
+    "eslint": "^8.22.0",
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "typeorm": "ts-node -r tsconfig-paths/register node_modules\\typeorm\\cli.js -d src/migrations",
+    "typeorm:cli": "ts-node ./node_modules/typeorm/cli -f ./ormconfig.json",
+    "migration:create": "npm run typeorm migration:create -- -n",
+    "migration:generate": "npm run typeorm migration:generate -- -n",
+    "migration:run": "npm run typeorm:cli migration:run",
+    "migration:revert": "npm run typeorm:cli migration:revert",
+    "lint": "eslint . --ext .ts"
+  },
+  "author": "",
+  "license": "ISC"
+}
